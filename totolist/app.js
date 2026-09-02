@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
 const cors = require("cors");
+const path = require("path");
 
 const options = {
   definition: {
@@ -27,6 +28,10 @@ app.use(
 );
 
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "../")));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../index.html"));
+});
 
 app.use(
   "/api-docs",
@@ -188,19 +193,15 @@ app.get("/todos", (req, res) => {
  *               $ref: '#/components/schemas/Todo'
  */
 app.post("/todos", (req, res) => {
-  // Création de la nouvelle tâche avec un ID unique.
   const newTodo = {
-    id: todos[0].todolist.length + 1, // Assurez-vous que l'ID est unique dans le tableau todolist.
+    id: todos[0].todolist.length + 1,
     text: req.body.text,
     created_at: new Date().toISOString(),
     Tags: req.body.Tags,
     is_complete: req.body.is_complete || false,
   };
 
-  // Ajout de la nouvelle tâche au tableau todolist à l'intérieur du premier objet du tableau todos.
   todos[0].todolist.push(newTodo);
-
-  // Envoi de la nouvelle tâche comme réponse.
   res.status(201).json(newTodo);
 });
 
@@ -266,16 +267,13 @@ app.get("/todos/:id", (req, res) => {
  *         description: The todo was not found
  */
 app.put("/todos/:id", (req, res) => {
-  // Correction: Accéder au bon tableau qui contient les todos.
   const index = todos[0].todolist.findIndex((t) => t.id == req.params.id);
 
   if (index >= 0) {
-    // Correction: Mise à jour correcte en utilisant l'index trouvé dans todolist.
     todos[0].todolist[index] = {
       ...todos[0].todolist[index],
       ...req.body,
     };
-    // Correction: Renvoyer le todo mis à jour depuis le tableau todolist.
     res.status(200).json(todos[0].todolist[index]);
   } else {
     res.status(404).send("Todo not found");
@@ -302,11 +300,9 @@ app.put("/todos/:id", (req, res) => {
  *         description: The todo was not found
  */
 app.delete("/todos/:id", (req, res) => {
-  // Accéder à l'index du todo à supprimer dans la liste des todos
   const index = todos[0].todolist.findIndex((t) => t.id == req.params.id);
 
   if (index >= 0) {
-    // Supprimer le todo du tableau
     todos[0].todolist.splice(index, 1);
     res.status(200).send("Todo deleted successfully");
   } else {

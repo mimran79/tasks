@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "totolist/app.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["*.html", "css/**", "js/**", "assets/**"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "totolist/app.js"
+    }
+  ]
+}
