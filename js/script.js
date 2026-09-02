@@ -7,8 +7,9 @@ menuButton.addEventListener("click", function () {
 });
 //Logout
 const logout = document.getElementById("logout");
-
-logout.addEventListener("click", function () {
-  localStorage.removeItem("name");
-  window.Location.href = "index.html";
-});
+if (logout) {
+  logout.addEventListener("click", function () {
+    localStorage.removeItem("name");
+    window.location.href = "index.html";
+  });
+}
