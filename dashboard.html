@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Task Management</title>
+    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="js/auth.js"></script>
+</head>
+<header>
+    <nav>
+        <a href="index.html">
+            <img src="assets/taskflows-logo.png" alt="TaskFlows" width="200">
+        </a>
+        <ul>
+            <li><a href="dashboard.html" id="dashboard">Dashboard</a></li>
+            <li><a href="tasks.html" id="dashboard">Tasks</a></li>
+            <li><a href="" id="logout">Logout</a></li>
+        </ul>
+        <button id="menu-toggle" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </nav>
+</header>
+
+<body>
+    <h2 id="username"></h2>
+    <p id="day"></p>
+    <div class="container">
+        <div class="item">
+            <h4>Total Projects : <span id="total"></span></h4>
+        </div>
+        <div class="item">
+            <h4>Completed Projects : <span id="completed"></span></h4>
+        </div>
+        <div class="item">
+            <h4>Incompleted Projects : <span id="incomplete"></span></h4>
+        </div>
+    </div>
+    <script src="js/dashboard.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

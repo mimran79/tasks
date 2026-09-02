@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Task</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="assets/taskflows-logo.png" alt="TaskFlows" width="200">
+            </a>
+            <ul>
+                <li><a href="dashboard.html" id="">Dashboard</a></li>
+                <li><a href="create-task.html" id="">Create Task</a></li>
+                <li><a href="" id="logout">Logout</a></li>
+            </ul>
+            <button id="menu-toggle" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </nav>
+    </header>
+    <section id="main">
+        <h1>Modify Task</h1>
+        <p id="success"></p>
+        <form id="create-task" method="POST">
+            <label for="task-content" class="form-label">Task Description</label>
+            <input type="text" name="task-content" id="task-content" class="form-input">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" name="date" id="date" class="form-input">
+            <label for="text-content" class="form-label">Tags</label>
+            <div>
+                <input type="checkbox" name="tag" id="tag-work" value="work">
+                <label for="tag" class="form-label">Work</label>
+                <input type="checkbox" name="tag" id="tag-personal" value="personal">
+                <label for="tag" class="form-label">Personal</label>
+            </div>
+            <label for="status" class="form-label">Status</label>
+            <select name="" id="status" class="form-label">
+                <option value="To-do">To do</option>
+                <option value="Complete">Complete</option>
+            </select>
+
+
+            <button class="btn">Update Task</button>
+        </form>
+    </section>
+
+    <script src="js/modify-task.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
