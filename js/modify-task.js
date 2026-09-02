@@ -4,7 +4,7 @@ const id = task.get("id");
 const content = document.getElementById("task-content");
 const date = document.getElementById("date");
 const status = document.getElementById("status");
-fetch("https://todo-three-zeta-23.vercel.app/todos" + id, {
+fetch("https://todo-three-zeta-23.vercel.app/todos/" + id, {
   method: "GET",
 })
   .then((task) => task.json())
@@ -26,7 +26,7 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
   const selectedTags = document.querySelectorAll('input[name="tag"]:checked');
   const tagsArray = [...selectedTags].map((tag) => tag.value);
-  fetch("https://todo-three-zeta-23.vercel.app/todos" + id, {
+  fetch("https://todo-three-zeta-23.vercel.app/todos/" + id, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
