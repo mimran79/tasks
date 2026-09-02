@@ -9,7 +9,7 @@ form.addEventListener("submit", function (event) {
   const selectedTags = document.querySelectorAll('input[name="tag"]:checked');
   const tagsArray = [...selectedTags].map((tag) => tag.value);
 
-  fetch("https://tasks-liytaj07-imran-2f49.vercel.app", {
+  fetch("https://tasks-liytaj07-imran-2f49.vercel.app/todos", {
     method: "POST",
     headers: {
       "Content-type": "application/JSON",

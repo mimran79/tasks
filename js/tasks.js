@@ -1,4 +1,4 @@
-fetch("https://tasks-liytaj07-imran-2f49.vercel.app", {
+fetch("https://tasks-liytaj07-imran-2f49.vercel.app/todos", {
   method: "GET",
 })
   .then((tasks) => tasks.json())
@@ -49,7 +49,7 @@ fetch("https://tasks-liytaj07-imran-2f49.vercel.app", {
       item.appendChild(del);
       del.addEventListener("click", function (event) {
         event.preventDefault();
-        fetch("https://tasks-liytaj07-imran-2f49.vercel.app" + task.id, {
+        fetch("https://tasks-liytaj07-imran-2f49.vercel.app/todos" + task.id, {
           method: "DELETE",
         })
           .then((response) => response.text())
