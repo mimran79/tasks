@@ -4,7 +4,7 @@ const id = task.get("id");
 const content = document.getElementById("task-content");
 const date = document.getElementById("date");
 const status = document.getElementById("status");
-fetch("http://localhost:3000/todos/" + id, {
+fetch("https://tasks-liytaj07-imran-2f49.vercel.app" + id, {
   method: "GET",
 })
   .then((task) => task.json())
@@ -26,7 +26,7 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
   const selectedTags = document.querySelectorAll('input[name="tag"]:checked');
   const tagsArray = [...selectedTags].map((tag) => tag.value);
-  fetch("http://localhost:3000/todos/" + id, {
+  fetch("https://tasks-liytaj07-imran-2f49.vercel.app" + id, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

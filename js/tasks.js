@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/todos", {
+fetch("https://tasks-liytaj07-imran-2f49.vercel.app", {
   method: "GET",
 })
   .then((tasks) => tasks.json())
@@ -49,7 +49,7 @@ fetch("http://localhost:3000/todos", {
       item.appendChild(del);
       del.addEventListener("click", function (event) {
         event.preventDefault();
-        fetch("http://localhost:3000/todos/" + task.id, {
+        fetch("https://tasks-liytaj07-imran-2f49.vercel.app" + task.id, {
           method: "DELETE",
         })
           .then((response) => response.text())
