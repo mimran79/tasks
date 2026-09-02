@@ -8,7 +8,7 @@ const incompleteTotal = document.getElementById("incomplete");
 
 username.textContent = localStorage.getItem("name");
 
-fetch("hhttps://tasks-liytaj07-imran-2f49.vercel.app", {
+fetch("https://tasks-liytaj07-imran-2f49.vercel.app", {
   method: "GET",
 })
   .then((data) => data.json())
